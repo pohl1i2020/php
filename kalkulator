@@ -1,0 +1,37 @@
+<?php
+    $liczba1 = 3;
+    $liczba2 = 5;
+    
+function dodawanie($l1, $l2){
+
+    echo $l1 + $l2;
+}
+function odejmowanie($l1, $l2){
+    echo $l1 - $l2;
+}
+function mnożenie($l1, $l2){
+    echo $l1 * $l2;
+}
+function procentowanie($l1, $l2){
+    echo $l1 % $l2;
+}
+function dzielenie($l1, $l2){
+    echo $l1 / $l2;
+}
+function potegowanie($l1, $l2){
+    echo $l1 ** $l2;   
+}
+
+dodawanie($liczba1, $liczba2);
+echo "<br/>";
+odejmowanie($liczba1, $liczba2);
+echo "<br/>";
+mnożenie($liczba1, $liczba2);
+echo "<br/>";
+procentowanie($liczba1, $liczba2);
+echo "<br/>";
+dzielenie($liczba1, $liczba2);
+echo "<br/>";
+potegowanie($liczba1, $liczba2);
+
+?>
