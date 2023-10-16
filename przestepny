@@ -1,0 +1,22 @@
+<?php
+function leapYear($year) {
+    if ((($year % 4 == 0) && ($year % 100 != 0)) || ($year % 400 == 0)) {
+        echo "$year jest rokiem przestępnym.";
+    } else {
+        echo "$year nie jest rokiem przestępnym.";
+    }
+}
+
+
+$year = 2024; 
+leapYear($year);
+echo "<br/>";
+$year = 25412874980; 
+leapYear($year);
+echo "<br/>";
+$year = 2029; 
+leapYear($year);
+echo "<br/>";
+$year = 8492179; 
+leapYear($year);
+?>
