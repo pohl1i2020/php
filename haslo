@@ -1,0 +1,35 @@
+<?php
+function passStrength($password) {
+    $length = strlen($password);
+    $containsDigit = preg_match('/\d/', $password);
+    $containsUppercase = preg_match('/[A-Z]/', $password);
+    $containsLowercase = preg_match('/[a-z]/', $password);
+    $containsSpecialChar = preg_match('/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-=`|\\/\\]]/', $password);
+
+    if ($length <= 4) {
+        echo "Hasło jest słabe (zbyt krótkie).";
+    } elseif ($length <= 8) {
+        if (!$containsDigit || !$containsUppercase || !$containsLowercase || !$containsSpecialChar) {
+            echo "Hasło jest średnie (brakuje pewnych elementów).";
+        } else {
+            echo "Hasło jest mocne.";
+        }
+    } else {
+        if (!$containsDigit || !$containsUppercase || !$containsLowercase || !$containsSpecialChar) {
+            echo "Hasło jest średnie (brakuje pewnych elementów).";
+        } else {
+            echo "Hasło jest mocne.";
+        }
+    }
+}
+
+$password = "MyStrongPassword123!";
+passStrength($password);
+echo "<br/>";
+$password = "123123";
+passStrength($password);
+echo "<br/>";
+$password = "abc";
+passStrength($password);
+
+?>
