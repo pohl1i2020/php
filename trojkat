@@ -1,0 +1,20 @@
+<?php
+function triangle($a, $b, $c) {
+    if ($a + $b > $c && $a + $c > $b && $b + $c > $a) {
+        echo "Można utworzyć trójkąt z boków o długościach $a, $b i $c.";
+    } else {
+        echo "Nie można utworzyć trójkąta z boków o długościach $a, $b i $c.";
+    }
+}
+
+$a = 3;
+$b = 4;
+$c = 5;
+triangle($a, $b, $c);
+echo "<br/>";
+$a = 10;
+$b = 4;
+$c = 2;
+triangle($a, $b, $c);
+
+?>
