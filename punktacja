@@ -1,0 +1,38 @@
+<?php
+        function grade($points) {
+            if ($points < 0 || $points > 100) {
+                return "Błąd: Wartość punktów spoza zakresu.";
+            } else if ($points >= 0 && $points < 40) {
+                return "Ocena: niedostateczna";
+            } else if ($points >= 40 && $points < 50) {
+                return "Ocena: dopuszczająca";
+            } else if ($points >= 50 && $points < 76) {
+                return "Ocena: dostateczna";
+            } else if ($points >= 76 && $points < 90) {
+                return "Ocena: dobra";
+            } else if ($points >= 90 && $points < 98) {
+                return "Ocena: bardzo dobra";
+            } else if ($points >= 98 && $points <= 100) {
+                return "Ocena: celująca";
+            }
+        }
+        
+        $points1 = 35;
+        $points2 = 60;
+        $points3 = 92;
+        $points4 = 99;
+        $points5 = 43;
+        $points6 = 81;
+  
+        echo grade($points1); 
+        echo "<br/>";
+        echo grade($points2); 
+        echo "<br/>";
+        echo grade($points3);
+        echo "<br/>";
+        echo grade($points4);
+        echo "<br/>";
+        echo grade($points5);
+        echo "<br/>";
+        echo grade($points6);
+?>
