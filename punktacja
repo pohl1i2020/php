@@ -16,13 +16,13 @@
                 return "Ocena: celująca";
             }
         }
-        
         $points1 = 35;
         $points2 = 60;
         $points3 = 92;
         $points4 = 99;
         $points5 = 43;
         $points6 = 81;
+        $points7 = 21987410;
   
         echo grade($points1); 
         echo "<br/>";
@@ -35,4 +35,6 @@
         echo grade($points5);
         echo "<br/>";
         echo grade($points6);
+        echo "<br/>";
+        echo grade($points7);
 ?>
