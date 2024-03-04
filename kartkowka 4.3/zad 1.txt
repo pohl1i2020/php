@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja strona WWW</title>
+</head>
+<body>
+
+    <form method="post" action="">
+        <label for="przyprostokatnaA">Długosc przyprostokatnej A:</label>
+        <input type="number" name="przyprostokatnaA">
+
+        <br>
+
+        <label for="przyprostokatnaB">Długosc przyprostokatnej B:</label>
+        <input type="number" name="przyprostokatnaB">
+
+        <br>
+
+        <input type="submit" value="Oblicz">
+    </form>
+
+    <?php
+    function obliczPrzeciwprostokatna($a, $b) {
+        return sqrt($a**2 + $b**2);
+    }
+
+        $przyprostokatnaA = $_POST["przyprostokatnaA"];
+        $przyprostokatnaB = $_POST["przyprostokatnaB"];
+
+            $przeciwprostokatna = obliczPrzeciwprostokatna($przyprostokatnaA, $przyprostokatnaB);
+
+            echo "Przeciwprostokątna trójkąta wynosi: $przeciwprostokatna";
+    
+    ?>
+</body>
+</html>

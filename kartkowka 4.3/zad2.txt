@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja strona WWW</title>
+</head>
+<body>
+
+    <form method="post" action="">
+        <label for="Panstwo">Podaj Panstwo: </label>
+        <input type="text" name="Panstwo">
+
+        <br>
+
+        <label for="srodek_lokomocji">Podaj srodek lokomocji </label>
+        <input type="text" name="srodek_lokomocji">
+
+        <br>
+
+        <label for="czas_trwania">Podaj czas trwania (w dniach)</label>
+        <input type="number" name="czas_trwania">
+
+        <br>
+        <label for="adres_mail">Podaj podaj email</label>
+        <input type="text" name="adres_mail">
+
+        <br>
+
+        <input type="submit" value="Dodaj moje zapytanie">
+    </form>
+
+    <?php
+    
+    $plik = fopen("plik.txt", "w");
+
+
+    $Panstwo = $_POST["Panstwo"];
+    $srodek_lokomocji = $_POST["srodek_lokomocji"];
+    $czas_trwania = $_POST["czas_trwania"];
+    $adres_mail = $_POST["adres_mail"];
+
+    if ($czas_trwania > 21) {
+
+        echo "Niestety, Twoje zapytanie nie spełnia warunków udziału w naszym programie";
+    }else{
+        echo "Dziękujemy za zapisanie się do naszej usługi. Informacje zostaną wysłane na podany adres email";
+
+
+    }
+    ?>
+</body>
+</html>
