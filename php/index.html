@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="ilosc">
+            Podaj liczbę gości
+            <input type="number" id="ilosc" name="ilosc">
+        </label>
+        <label for="poprawiny">
+            Poprawiny:
+            <input type="checkbox" id="poprawiny" name="poprawiny">
+        </label>
+        <button type="submit" id="buton">Oblicz</button>
+        <div id="pole"></div>
+    </form>
+
+    <script>
+        const ilosc1 = document.querySelector("#ilosc");
+        const poprawiny1 = document.querySelector("#poprawiny");
+        // const btn = document.querySelector("#buton");
+        const display = document.querySelector("#pole");
+        const form = document.querySelector('form');
+
+        form.addEventListener("input", function (evt){
+            evt.preventDefault();
+            const ilosc1val = ilosc1.value;
+            const poprawiny1val = poprawiny1.checked; 
+            let suma = 0;
+            // let suma30 = 0;            
+            if (poprawiny1val) {
+                suma = ilosc1val * 130;
+                // suma30 = suma * 3;
+                
+            } else {
+                suma = ilosc1val * 100;
+            }
+
+            display.textContent = `Koszt zapłaty za wesele wynosi ${suma} zł`
+        })
+
+
+
+    </script>
+
+
+</body>
+</html>
