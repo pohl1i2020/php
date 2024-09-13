@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">
+            <input type="text" class="numer">
+            <input type="checkbox" class="checkboxx">
+            <br>
+        </label>
+        <label for="">
+            <input type="text" class="numer">
+            <input type="checkbox" class="checkboxx">
+            <br>
+
+        </label>
+        <label for="">
+            <input type="text" class="numer">
+            <input type="checkbox" class="checkboxx">
+            <br>
+            
+        </label>
+        <label for="">
+            <input type="text" class="numer">
+            <input type="checkbox" class="checkboxx">
+            <br>
+
+        </label>
+        <label for="">
+            <input type="text" class="numer">
+            <input type="checkbox" class="checkboxx">
+            <br>
+        </label>
+        <div class="display"></div>
+    </form>
+    <script>
+        const display = document.querySelector('.display')
+        const form = document.querySelector('form')
+
+        form.addEventListener('change', function(evt){
+            evt.preventDefault();
+            const liczba = document.querySelectorAll('.numer')
+            const checks = document.querySelectorAll('.checkboxx')
+
+            let suma = 0
+
+            for (let i = 0; i < liczba.length; i++) {
+                const value = parseInt(liczba[i].value);  
+
+                if (checks[i].checked && !isNaN(value)) {
+                    suma += value;  
+                    display.textContent=`Suma liczb to ${suma}`
+                }else{
+                    display.textContent=`Nie jest zaznaczona zadna wartosc`
+                    
+                }
+                
+            }
+
+        }
+        )
+    </script>
+</body>
+</html>
