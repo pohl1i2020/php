@@ -16,9 +16,10 @@
             Podaj druga liczbe:
             <input type="number" id="second" name="second">
         </label>
+        <div class="display"></div>
         <button id="Dodawanie">Dodawanie</button>
         <button id="Odejmowanie">Odejmowanie</button>
-        <button id="Mnożenie">Mnożenie</button>
+        <button id="Mnozenie">Mnożenie</button>
         <button id="dzielenie">Dzielenie</button>
         <button id="dzielenieR">Reszta z dzielenia</button>
         <button id="dzielenieC">dzielenie całkowite</button>
@@ -29,10 +30,90 @@
         const second = document.querySelector('#second')
         const Dodawanie = document.querySelector('#Dodawanie')
         const Odejmowanie = document.querySelector('#Odejmowanie')
-        const Mnożenie = document.querySelector('#Mnożenie')
+        const Mnozenie = document.querySelector('#Mnozenie')
         const dzielenieR = document.querySelector('#dzielenieR')
         const dzielenie = document.querySelector('#dzielenie')
         const dzielenieC = document.querySelector('#dzielenieC')
+        const display = document.querySelector('.display')
+
+        Dodawanie.addEventListener('click', function(evt){
+            evt.preventDefault();
+            
+            const firstval = parseInt(first.value)
+            const secondval = parseInt(second.value)
+            let suma = 0;
+            console.log(firstval)
+            if (firstval == '' || secondval == '' || isNaN(firstval) || isNaN(secondval)) {
+                display.textContent='Wprowadz prawidlowe dane'
+                
+            } else {
+                suma=firstval + secondval;
+                display.textContent=`Wynik dodawania = ${suma}`
+            }
+            
+        })
+        Odejmowanie.addEventListener('click', function(evt){
+            evt.preventDefault();
+            const firstval = parseInt(first.value)
+            const secondval = parseInt(second.value)
+            let suma = 0;
+            if (firstval == '' || secondval == '' || isNaN(firstval) || isNaN(secondval)) {
+                display.textContent='Wprowadz prawidlowe dane'
+                
+            } else {
+            suma=firstval - secondval;
+            display.textContent=`Wynik odejmowania = ${suma}`
+            }
+        })
+        Mnozenie.addEventListener('click', function(evt){
+            evt.preventDefault();
+            const firstval = parseInt(first.value)
+            const secondval = parseInt(second.value)
+            let suma = 0;
+            if (firstval == '' || secondval == '' || isNaN(firstval) || isNaN(secondval)) {
+                display.textContent='Wprowadz prawidlowe dane'
+                
+            } else {
+            suma=firstval * secondval;
+            display.textContent=`Wynik mnozenia = ${suma}`}
+        })
+        dzielenie.addEventListener('click', function(evt){
+            evt.preventDefault();
+            const firstval = parseInt(first.value)
+            const secondval = parseInt(second.value)
+            let suma = 0;
+            if (firstval == '' || secondval == '' || isNaN(firstval) || isNaN(secondval)) {
+                display.textContent='Wprowadz prawidlowe dane'
+                
+            } else {
+            suma=firstval / secondval;
+            display.textContent=`Wynik mnozenia = ${suma}`}
+        })
+        dzielenieR.addEventListener('click', function(evt){
+            evt.preventDefault();
+            const firstval = parseInt(first.value)
+            const secondval = parseInt(second.value)
+            let suma = 0;
+            if (firstval == '' || secondval == '' || isNaN(firstval) || isNaN(secondval)) {
+                display.textContent='Wprowadz prawidlowe dane'
+                
+            } else {
+            suma=firstval % secondval;
+            display.textContent=`Wynik dzielenia z resztą = ${suma}`}
+        })
+        dzielenieC.addEventListener('click', function(evt){
+            evt.preventDefault();
+            const firstval = parseInt(first.value)
+            const secondval = parseInt(second.value)
+            let suma = 0;
+            if (firstval == '' || secondval == '' || isNaN(firstval) || isNaN(secondval)) {
+                display.textContent='Wprowadz prawidlowe dane'
+                
+            } else {
+            suma= Math.floor(firstval / secondval)
+            display.textContent=`Wynik dzielenia calkowitego = ${suma}`}
+        })
+
 
         
 
